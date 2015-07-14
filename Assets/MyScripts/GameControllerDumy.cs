@@ -39,7 +39,7 @@ namespace MyGame
         // Update is called once per frame
         void Update()
         {
-            if (Block.ObjCount <= 0) //ブロックの数がゼロ
+            if (BlockDumy.ObjCount <= 0) //ブロックの数がゼロ
             {
                 setEnd(true);
             }
@@ -51,9 +51,6 @@ namespace MyGame
             str = scoreText.text.Split(':');
             scorePoint = int.Parse(str[1]) + 100;
             scoreText.text = str[0] + ":" + scorePoint;
-
-            Block.ObjCount--;
-            Debug.Log(Block.ObjCount);
         }
 
         public void setEnd(bool win)

@@ -15,16 +15,16 @@ namespace MyGame
 
         void OnCollisionEnter(Collision collision)
         {
-            GameControllerDumy.Instance.getPoint(); //以下の動作をGameControllerに定義する
+            GameController.getPoint(); //以下の動作をGameControllerに定義する
             /*string[] str;
             int score;
             str = scoreText.text.Split(':');
             score = int.Parse(str[1]) + 100;
             scoreText.text = str[0] + ":" + score;
-
+            */
             ObjCount--;
             Debug.Log(ObjCount);
-            */
+
             Destroy(gameObject);
         }
 

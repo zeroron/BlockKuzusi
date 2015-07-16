@@ -9,6 +9,7 @@ namespace MyGame
         public Text scoreText;
         private int scorePoint = 0;
         private bool end = false;
+        private float time;
         [SerializeField] private GameObject canvas;
         [SerializeField] private GameObject EndScreen;
         [SerializeField] private GameObject ball;
@@ -36,6 +37,10 @@ namespace MyGame
                 Destroy(this);
             }
         }
+        void Start()
+        {
+            time = 0;
+        }
         // Update is called once per frame
         void Update()
         {
@@ -43,6 +48,7 @@ namespace MyGame
             {
                 setEnd(true);
             }
+            time += Time.deltaTime;
         }
 
         public void getPoint()
@@ -77,6 +83,10 @@ namespace MyGame
                     if (text.tag == "score")
                     {
                         text.text = "Score:" + scorePoint;
+                    }
+                    if (text.tag == "time")
+                    {
+                        text.text = "Time:" + time;
                     }
                 }
                 Destroy(ball);
